@@ -19,5 +19,46 @@ git commit -m "first commit"
 git remote add origin https://github.com/okokos/simple-application.git
 git push -u origin master
 
-5.
+4.
+POM aanpassing
+Voor dat je de applicatie naar Quattro kan deployen moeten 2 aanpassingen in de POM van tro-application, een file remove van logback.xml en de branch verwijzing quattro in .gitlab-ci.yml worden aangepast:
+a. De packaging moet van WAR naar JAR voor docker:
+...
+ <packaging>jar</packaging>
+...
+b. In de build-plugins sectie moet de main class referentie worden gezet (JAR project heeft het nodig):
+...
+  <build>
+        <plugins>
+            <plugin>
+                <groupId>org.springframework.boot</groupId>
+                <artifactId>spring-boot-maven-plugin</artifactId>
+                <configuration>
+                    <mainClass>nl.rijksoverheid.ocw.ivho.tro.TroApplication</mainClass>
+                </configuration>
+            </plugin>
+....
+c. set  <finalName>simple.application</finalName> for same name
+d. Verwijder tro-application/src/main/resources/logback.xml file als dat nodig is in Quattro.
+
+5. run mvn clean install to create jar file
+
+6. create image Docker using de jar with podman
+https://docs.docker.com/engine/userguide/eng-image/dockerfile_best-practices
+https://access.redhat.com/documentation/en-us/openshift_container_platform/4.5/html-single/images/creating-images
+$ podman build -t simpleapplication .
+$ podman images
+REPOSITORY                           TAG         IMAGE ID      CREATED         SIZE
+localhost/simpleapplication          latest      520db14bdc27  6 seconds ago   234 MB
+
+7. Tag image to send to image repository quai
+$ podman tag simpleapplication quay.io/skostany/simpleapplication
+$ podman login quay.io -u skostany
+$ podman push quay.io/skostany/simpleapplication
+After pushing check de "Vulnerabilities"
+
+
+
+
+
 Deploy using S2I builds
