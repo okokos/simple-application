@@ -57,6 +57,16 @@ $ podman login quay.io -u skostany
 $ podman push quay.io/skostany/simpleapplication
 After pushing check de "Vulnerabilities"
 
+8. deploy S2I
+install:
+https://tomd.xyz/openshift-s2i-example/#what-exactly-is-a-buildconfig
+simple matrix:
+https://github.com/monodot/simple-camel-spring-boot-app/blob/master/pom.xml
+create file buildspec and add POM specs.
+a. login to oc:
+$ oc login
+b. deploy
+$ oc new-build registry.access.redhat.com/ubi8/openjdk-11~https://github.com/monodot/simple-camel-spring-boot-app --name=simpleapplication
 
 
 

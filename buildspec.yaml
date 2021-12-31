@@ -1,0 +1,18 @@
+version: 0.2
+
+phases:
+  install:
+    runtime-versions:
+      java: corretto8
+  build:
+    commands:
+      - echo Starting building a lovely simpleapplication
+      - mvn test
+  post_build:
+    commands:
+      - echo Completed building a lovely simpleapplication
+      - mvn package
+artifacts:
+  files:
+    - target/simpleapplication.jar
+  discard-paths: yes
