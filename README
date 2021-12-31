@@ -5,21 +5,10 @@ curl http://localhost:8080/
 2. resources git
 git:
 https://github.com
-okokos
-kostany@hotmail.com
-SlieRen99
-token:
-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
 
 3. images resources
 Quay:
 https://quay.io/repository/
-s.kostany@owinsp.nl
-skostany
-SlieRen99
-encrypted:
-skostany
-t55SLdN7UlG/t8PSiHxN60OXB9J/GDZh9mE7kJpCt7A0OPOmHsiGAyeMmIR8YB1z
 
 4.
 # Create a new repository on the command line in GITHUB
