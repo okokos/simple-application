@@ -1,0 +1,35 @@
+1.
+Clean install and run with:
+curl http://localhost:8080/
+
+2. resources git
+git:
+https://github.com
+okokos
+kostany@hotmail.com
+SlieRen99
+token:
+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
+
+3. images resources
+Quay:
+https://quay.io/repository/
+s.kostany@owinsp.nl
+skostany
+SlieRen99
+encrypted:
+skostany
+t55SLdN7UlG/t8PSiHxN60OXB9J/GDZh9mE7kJpCt7A0OPOmHsiGAyeMmIR8YB1z
+
+
+# Create a new repository on the command line in GITHUB
+git init
+git add README.md
+git commit -m "first commit"
+git remote add origin https://github.com/okokos/simple-application.git
+git push -u origin master
+
+# Push an existing repository from the command line
+
+git remote add origin https://github.com/c0ldlimit/vimcolors.git
+git push -u origin master
