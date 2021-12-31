@@ -21,15 +21,14 @@ encrypted:
 skostany
 t55SLdN7UlG/t8PSiHxN60OXB9J/GDZh9mE7kJpCt7A0OPOmHsiGAyeMmIR8YB1z
 
-
+4.
 # Create a new repository on the command line in GITHUB
 git init
 git add README.md
+git add.
 git commit -m "first commit"
 git remote add origin https://github.com/okokos/simple-application.git
 git push -u origin master
 
-# Push an existing repository from the command line
-
-git remote add origin https://github.com/c0ldlimit/vimcolors.git
-git push -u origin master
+5.
+Deploy using S2I builds
