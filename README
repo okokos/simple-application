@@ -63,12 +63,28 @@ https://tomd.xyz/openshift-s2i-example/#what-exactly-is-a-buildconfig
 simple matrix:
 https://github.com/monodot/simple-camel-spring-boot-app/blob/master/pom.xml
 create file buildspec and add POM specs.
+
 a. login to oc:
 $ oc login
-b. deploy
+b. create project
+$ oc new-project ivho-application
+
+c. deploy:
+
+- S2I (werkt nog niet)
 $ oc new-build registry.access.redhat.com/ubi8/openjdk-11~https://github.com/okokos/simple-application.git#feature/stepone --name=simpleapplication
 
+- met image uit quai
+$ oc new-app --name simpleapplication quay.io/skostany/simpleapplication
+$ oc status
+$ oc get pods -w
+$ oc logs --tail 3 -n podnaam
+$ oc describe deployment simpleapplication
+$ oc expose svc/simpleapplication
+$ oc get route/simpleapplication
+$ curl http://simpleapplication-ivho-application.apps.ontw-test.ocw.rijksapps.nl
+
+d. remove it
+oc delete project ivho-application
 
 
-
-Deploy using S2I builds

@@ -5,6 +5,5 @@ ARG jarfile
 ENV jarfileName=$jarfile
 
 COPY ${jarfileName} toezichtresultaten.jar
-EXPOSE 80
 
 ENTRYPOINT ["java","-jar","-Dspring.profiles.active=oc","/simpleapplication.jar"]
