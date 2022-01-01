@@ -92,3 +92,6 @@ oc new-app --name jhost -i redhat-openjdk18-openshift:1.8 https://github.com/oko
 oc logs -f buildconfig/jhost
 
 oc new-app --name simpleone -i redhat-openjdk18-openshift:1.8 https://github.com/okokos/DO288-apps#manage-builds --context-dir java-serverhost
+
+extra test:
+oc new-app  --name=simpleone registry.access.redhat.com/ubi8/openjdk-11~https://github.com/okokos/simple-application.git#feature/stepone
