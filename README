@@ -78,7 +78,7 @@ $ oc new-build registry.access.redhat.com/ubi8/openjdk-11~https://github.com/oko
 $ oc new-app --name simpleapplication quay.io/skostany/simpleapplication
 $ oc status
 $ oc get pods -w
-$ oc logs --tail 3 -n podnaam
+$ oc logs --tail 3 podnaam
 $ oc describe deployment simpleapplication
 $ oc expose svc/simpleapplication
 $ oc get route/simpleapplication

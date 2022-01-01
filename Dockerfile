@@ -1,4 +1,4 @@
-FROM registry.access.redhat.com/ubi8/ubi:8.0
+FROM maven:3.5.2-jdk-8-alpine
 MAINTAINER S. Kostany <s.kostany@owinsp.nl>
 
 ARG jarfile
