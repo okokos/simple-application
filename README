@@ -76,7 +76,7 @@ c. deploy:
 - S2I (werkt nog niet)
 $ oc new-build registry.access.redhat.com/ubi8/openjdk-11~https://github.com/okokos/simple-application.git#feature/stepone --name=simpleapplication
 
-- met image uit quai
+- met image uit quai (route nog niet open)
 $ oc new-app --name simpleapplication quay.io/skostany/simpleapplication
 $ oc status
 $ oc get pods -w
@@ -87,6 +87,6 @@ $ oc get route/simpleapplication
 $ curl http://simpleapplication-ivho-application.apps.ontw-test.ocw.rijksapps.nl
 
 d. remove it
-oc delete project ivho-application
+oc delete project ivho-sk-application
 
 
