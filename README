@@ -87,5 +87,7 @@ $ oc get route/simpleapplication
 $ oc get pods
 $ curl http://simpleapplication-ivho-sk-application.apps.ontw-test.ocw.rijksapps.nl/
 
-
+load from git/POM
+oc new-app --name jhost -i redhat-openjdk18-openshift:1.8 https://github.com/okokos/DO288-apps#manage-builds --context-dir java-serverhost
+oc logs -f buildconfig/jhost
 
