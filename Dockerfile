@@ -1,9 +1,9 @@
-FROM maven:3.5.2-jdk-8-alpine
+FROM adoptopenjdk/openjdk11:alpine-jre
 MAINTAINER S. Kostany <s.kostany@owinsp.nl>
 
 ARG jarfile
-ENV jarfileName=$jarfile
+ENV jarfileName=target/simpleapplication.jar
 
-COPY ${jarfileName} toezichtresultaten.jar
+COPY ${jarfileName} simpleapplication.jar
 
 ENTRYPOINT ["java","-jar","-Dspring.profiles.active=oc","/simpleapplication.jar"]

@@ -50,6 +50,8 @@ $ podman build -t simpleapplication .
 $ podman images
 REPOSITORY                           TAG         IMAGE ID      CREATED         SIZE
 localhost/simpleapplication          latest      520db14bdc27  6 seconds ago   234 MB
+$ podman run simpleapplication
+$ podman ps
 
 7. Tag image to send to image repository quai
 $ podman tag simpleapplication quay.io/skostany/simpleapplication
@@ -67,7 +69,7 @@ create file buildspec and add POM specs.
 a. login to oc:
 $ oc login
 b. create project
-$ oc new-project ivho-application
+$ oc new-project ivho-sk-application
 
 c. deploy:
 
