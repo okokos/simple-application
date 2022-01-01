@@ -84,9 +84,8 @@ $ oc logs --tail 3 podnaam
 $ oc describe deployment simpleapplication
 $ oc expose svc/simpleapplication
 $ oc get route/simpleapplication
-$ curl http://simpleapplication-ivho-application.apps.ontw-test.ocw.rijksapps.nl
+$ oc get pods
+$ curl http://simpleapplication-ivho-sk-application.apps.ontw-test.ocw.rijksapps.nl/
 
-d. remove it
-oc delete project ivho-sk-application
 
 
