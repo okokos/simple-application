@@ -99,8 +99,9 @@ $ curl http://simpleapplication-ivho-sk-application.apps.ontw-test.ocw.rijksapps
 LOAD from git
 ======================
 php warmte converter
-oc new-app  --name warmteconverter -i php:7.3 https://github.com/okokos/simple-application.git#feature/stepone --context-dir php-temperatuur
-
+$ oc new-app  --name warmteconverter -i php:7.3 https://github.com/okokos/simple-application.git#feature/stepone --context-dir php-temperatuur
+- change source and oush to git
+$ oc start-build warmteconverter
 
 
 
