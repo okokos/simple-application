@@ -69,12 +69,13 @@ create file buildspec and add POM specs.
 a. login to oc:
 $ oc login
 b. create project
-$ oc new-project ivho-sk-application
+$
+$ oc delete project ivho-sk-application
 
 c. deploy:
 
-- S2I (werkt nog niet)
-$ oc new-build registry.access.redhat.com/ubi8/openjdk-11~https://github.com/okokos/simple-application.git#feature/stepone --name=simpleapplication
+- S2I maakt een build config
+$ oc new-app --name=simpleapplication registry.access.redhat.com/ubi8/openjdk-11~https://github.com/okokos/simple-application.git#feature/stepone
 
 - met image uit quai (route nog niet open)
 $ oc new-app --name simpleapplication quay.io/skostany/simpleapplication
@@ -97,7 +98,20 @@ $ curl http://simpleapplication-ivho-sk-application.apps.ontw-test.ocw.rijksapps
 ======================
 LOAD from git
 ======================
-oc new-app  --name warmteconverter1 -i php:7.3 https://github.com/okokos/simple-application.git#feature/stepone --context-dir php-temperatuur
+php warmte converter
+oc new-app  --name warmteconverter -i php:7.3 https://github.com/okokos/simple-application.git#feature/stepone --context-dir php-temperatuur
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
