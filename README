@@ -94,6 +94,14 @@ $ oc logs -f build/simple3-2
 
 $ curl http://simpleapplication-ivho-sk-application.apps.ontw-test.ocw.rijksapps.nl/
 
+======================
+LOAD from git
+======================
+oc new-app  --name warmteconverter1 -i php:7.3 https://github.com/okokos/simple-application.git#feature/stepone --context-dir php-temperatuur
+
+
+
+
 
 
 load from git/POM
